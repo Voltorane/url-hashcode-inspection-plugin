@@ -1,0 +1,8 @@
+<html>
+<body>
+<h2> Warning about java.net.Url#hashCode() usage </h2>
+Detects usages of java.net.Url#hashCode(). Usage of a such API could be ambiguous and lead to unexpected
+results, as the java.net.Url#hashCode() tries to resolve the host of the URL during its computation.
+<!-- tooltip end -->
+</body>
+</html>

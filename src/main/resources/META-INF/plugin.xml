@@ -1,18 +1,22 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.voltorane.urlhashcodeinspectionplugin</id>
-    <name>url-hashcode-inspection-plugin Template</name>
+    <name>Url Hashcode Inspection</name>
     <vendor>voltorane</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <resource-bundle>messages.InspectionBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.voltorane.urlhashcodeinspectionplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <localInspection language="JAVA"
+                         bundle="messages.InspectionBundle"
+                         key="display.name"
+                         groupPath="Java"
+                         groupBundle="messages.InspectionsBundle"
+                         groupKey="group.names.probable.bugs"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="com.github.voltorane.urlhashcodeinspectionplugin.UrlHashcodeInspection"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.voltorane.urlhashcodeinspectionplugin.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
-    </applicationListeners>
 </idea-plugin>
